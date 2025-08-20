@@ -1,0 +1,66 @@
+@use '../../styles/mixins' as mixins;
+@use '../../styles/custom-variables' as customVariables;
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 160px;
+  background: customVariables.$dark-gray;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  .logo-img {
+    cursor: pointer;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .header-button {
+      margin-left: 24px;
+      display: flex;
+      align-items: center;
+      border: unset;
+      background: transparent;
+      box-shadow: none;
+      span {
+        @include mixins.font-face( normal, 300, 16px, 23px, customVariables.$white);
+      }
+      &:hover {
+        background: unset;
+        span {
+          color: customVariables.$bright-orange-1;
+        }
+      }
+    }
+  }
+}
+
+.ant-popover {
+  .ant-popover-arrow {
+    display: none;
+  }
+  .ant-popover-content {
+    .ant-popover-inner {
+      background-color: customVariables.$gray-base;
+      padding: 0;
+      .ant-popover-inner-content {
+        .box-menu {
+          .item {
+            padding: 0 32px;
+           width: 280px;
+            height: 72px;
+            @include mixins.font-face( normal, 300, 18px, 26px, customVariables.$white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-bottom: 1px solid #2E2E2E;
+            &:last-child {
+              border-bottom: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}

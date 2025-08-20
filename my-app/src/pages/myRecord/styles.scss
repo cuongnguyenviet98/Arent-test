@@ -1,0 +1,151 @@
+@use '../../styles/mixins' as mixin;
+@use '../../styles/custom-variables'  as customVariables;
+
+.my-record {
+  padding: 56px 160px 64px 160px;
+  position: relative;
+
+  .detail-option {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 48px;
+    margin-bottom: 56px;
+
+    .item-option {
+      border: 24px solid customVariables.$bright-orange;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        opacity: 1;
+        z-index: 1;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .text-option {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+
+        .title {
+          @include mixin.font-face(normal, 400, 25px, 30px, customVariables.$bright-orange);
+          margin-bottom: 11px;
+        }
+
+        .note-title {
+          display: block;
+          width: 160px;
+          height: 24px;
+          background-color: customVariables.$bright-orange-1;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .body-record-chart {
+    height: 304px;
+    background-color: customVariables.$black-base;
+    margin-bottom: 56px;
+  }
+
+  .my-exercise {
+    height: 264px;
+    padding: 16px 24px;
+    background-color: customVariables.$black-base;
+    margin-bottom: 56px;
+
+    .title {
+      @include mixin.font-face(normal, 400, 15px, 18px, customVariables.$white);
+      margin-bottom: 4px;
+    }
+
+    .my-exercise-content {
+      height: 90%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 8px 40px;
+      overflow: auto;
+      padding-right: 24px;
+       &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: customVariables.$bright-orange;
+        border-radius: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 8px;
+        background-color: customVariables.$gray-base;
+      }
+
+
+      .content {
+        border-bottom: 1px solid #777;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .content-left {
+          padding-bottom: 4px;
+
+          .title {
+            @include mixin.font-face(normal, 300, 15px, 22px, customVariables.$white);
+          }
+
+          .kcal {
+            @include mixin.font-face(normal, 400, 15px, 18px, customVariables.$bright-orange);
+            margin-left: 12px;
+          }
+        }
+
+        .content-right {
+          @include mixin.font-face(normal, 400, 18px, 22px, customVariables.$bright-orange);
+        }
+      }
+    }
+  }
+
+  .my-diary {
+    .big-title {
+      @include mixin.font-face(normal, 400, 22px, 27px, customVariables.$dark-gray);
+    }
+    .diary-box {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 12px;
+      margin-bottom: 30px;
+      .diary-content {
+        padding: 16px;
+        border: 2px solid customVariables.$gray-base;
+        .date, .time {
+          @include mixin.font-face(normal, 400, 18px, 22px, customVariables.$dark-gray);
+        }
+        .time {
+          margin-bottom: 8px;
+        }
+        .title, .note {
+          @include mixin.font-face(normal, 300, 12px, 17px, customVariables.$dark-gray);
+        }
+      }
+    }
+  }
+}

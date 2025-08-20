@@ -1,0 +1,14 @@
+@use '../../styles/mixins' as mixins;
+@use '../../styles/custom-variables' as customVariables;
+
+.main-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 128px;
+  background-color: customVariables.$dark-gray;
+  padding: 0 160px;
+  span {
+    @include mixins.font-face( normal, 300, 11px, 16px, customVariables.$white);
+  }
+}

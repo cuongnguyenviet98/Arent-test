@@ -1,0 +1,19 @@
+@use '../../styles/mixins' as mixins;
+@use '../../styles/custom-variables' as customVariables;
+
+.chart-button-option {
+  button {
+    width: 56px;
+    height: 24px;
+    border-radius: 11px;
+    background: customVariables.$white;
+    @include mixins.font-face(normal, 300, 15px, 22px, customVariables.$bright-orange);
+    border: unset;
+    margin-right: 16px;
+    cursor: pointer;
+    &:hover {
+      background: customVariables.$bright-orange;
+      color: customVariables.$white;
+    }
+  }
+}

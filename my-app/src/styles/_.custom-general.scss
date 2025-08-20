@@ -1,0 +1,16 @@
+
+@use './mixins' as mixin;
+@use './custom-variables'  as customVariables;
+
+.button-box {
+  text-align: center;
+  .more-button {
+    width: 296px;
+    height: 56px;
+    background: linear-gradient(33deg, #FFCC21 0%, #FF963C 100%);
+    border: unset;
+    border-radius: 8px;
+    @include mixin.font-face( normal, 300, 18px, 26px, customVariables.$white);
+    cursor: pointer;
+  }
+}
