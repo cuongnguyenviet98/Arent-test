@@ -1,4 +1,7 @@
-import {m01, l01, d01, s01} from "../../static/image/jpg";
+import m01 from "../static/image/jpg/m01.jpg";
+import l01 from "../static/image/jpg/l01.jpg";
+import d01 from "../static/image/jpg/d01.jpg";
+import s01 from "../static/image/jpg/s01.jpg";
 
 export const fakeMeals = [
   {

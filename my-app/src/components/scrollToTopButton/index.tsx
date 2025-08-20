@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "./styles.scss";
-import { ScrollIcon } from '../../static/image/svg';
+import { ScrollIcon } from "../../static/image/svg";
 
 interface ScrollToTopButtonProps {
   className?: string;
 }
 
-const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({ className = "scroll-to-top-button" }) => {
+const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({
+  className = "scroll-to-top-button",
+}) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const handleScroll = () => {
@@ -20,16 +22,16 @@ const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({ className = "scro
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // cleanup
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

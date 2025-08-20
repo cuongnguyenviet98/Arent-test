@@ -1,4 +1,7 @@
-import {Column1, Column2, Column3, Column4} from "../../static/image/jpg";
+import Column1 from "../static/image/jpg/column-1.jpg"
+import Column2 from "../static/image/jpg/column-2.jpg"
+import Column3 from "../static/image/jpg/column-3.jpg"
+import Column4 from "../static/image/jpg/column-4.jpg"
 
 export const fakeColumns = [
   {

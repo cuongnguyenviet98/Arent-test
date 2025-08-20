@@ -25,11 +25,12 @@ const PieChart: React.FC<PieChartProps> = ({ fakePercentage = 75 }) => {
         text: `${currentDate} ${fakePercentage}%`,
         align: "center",
         verticalAlign: "middle",
-        y: 120,
+        y: 130,
         style: {
           fontSize: "18px",
           fontWeight: "400",
           color: "#FFFFFF",
+          marginTop: "12px",
         },
       },
       plotOptions: {
